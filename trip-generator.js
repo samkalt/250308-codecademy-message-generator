@@ -18,7 +18,7 @@ function generateTrip() {
         let list = ['DEN', '>>>']
         for (i = 0; i < legs - 1; i++) {
             let nextStop = Math.floor(Math.random() * airports.length)
-            while (airports[nextStop] === list[i]) {
+            while (airports[nextStop] === list[list.length - 2]) {
                 nextStop = Math.floor(Math.random() * airports.length)
             }
             list.push(airports[nextStop])
