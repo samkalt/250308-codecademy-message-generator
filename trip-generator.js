@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // HTML Elements Assignment
+    let jsAircraft = document.getElementById('HTMLaircraft')
+    let jsPosition = document.getElementById('HTMLposition')
+    let jsLegs = document.getElementById('HTMLlegs')
+    let jsRoute = document.getElementById('HTMLroute')
+    let jsButton = document.getElementById('generate-button')
+
 /* This function will generate a skywest trip for one day
 
 Output :
@@ -21,7 +29,7 @@ function generateTrip() {
     // Function to create a route for the trip in a list
     function generateAirports() {
         let list = ['DEN', '>>>']
-        for (i = 0; i < legs - 1; i++) {
+        for (let i = 0; i < legs - 1; i++) {
             let nextStop = Math.floor(Math.random() * airports.length)
 
             // Validate next destination is not the same as the previous destination
@@ -36,19 +44,27 @@ function generateTrip() {
         return list
     }
 
-    // Roll for aircraft type and position
-    let aircraftIndex = Math.floor(Math.random() * aircraft.length)
-    let positionIndex = Math.floor(Math.random() * position.length)
+    // Assign aircraft type and position
+    let aircraftAssignment = aircraft[Math.floor(Math.random() * aircraft.length)]
+    let positionAssignment = position[Math.floor(Math.random() * position.length)]
 
     // Create the route
     let airportsList = generateAirports()
+    let route = airportsList.join(' ')
 
     // Log results
-    console.log(`You got assigned a trip!`)
-    console.log(`You will be flying on the ${aircraft[aircraftIndex]}.`)
-    console.log(`You will be operating as the ${position[positionIndex]}.`)
-    console.log(`Your trip has ${legs} legs.`)
-    console.log(`Your route: ${airportsList.join(' ')}`)
+    // console.log(`You got assigned a trip!`)
+    // console.log(`You will be flying on the ${aircraftAssignment}.`)
+    // console.log(`You will be operating as the ${positionAssignment}.`)
+    // console.log(`Your trip has ${legs} legs.`)
+    // console.log(`Your route: ${route}`)
+
+    // Display results
+    jsAircraft.innerHTML = `${aircraftAssignment}`
+    jsPosition.innerHTML = `${positionAssignment}`
+    jsLegs.innerHTML = `${legs}`
+    jsRoute.innerHTML = `${route}`
 }
 
-generateTrip()
+    jsButton.onclick = generateTrip
+});
