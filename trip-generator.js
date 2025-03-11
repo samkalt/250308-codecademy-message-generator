@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // HTML Elements Assignment
-    let jsAircraft = document.getElementById('HTMLaircraft')
-    let jsPosition = document.getElementById('HTMLposition')
-    let jsLegs = document.getElementById('HTMLlegs')
-    let jsRoute = document.getElementById('HTMLroute')
-    let jsButton = document.getElementById('generate-button')
+// HTML Elements Assignment
+let jsAircraft = document.getElementById('HTMLaircraft')
+let jsPosition = document.getElementById('HTMLposition')
+let jsLegs = document.getElementById('HTMLlegs')
+let jsRoute = document.getElementById('HTMLroute')
+let jsButton = document.getElementById('generate-button')
 
 /* This function will generate a skywest trip for one day
 
@@ -19,7 +18,7 @@ Your route - airports you will be flying to
 function generateTrip() {
 
     // Data banks
-    const aircraft = ['ERJ', 'CRJ 700', 'CRJ 550', 'CRJ 200']
+    const aircraft = ['ERJ', 'CRJ 900', 'CRJ 700', 'CRJ 550', 'CRJ 200', 'A380']
     const position = ['Captain', 'First Officer', 'Flight Attendant']
     const airports = ['APA', 'COS', 'GJT', 'ASE', 'DRO', 'PUB', 'LAR', 'CPR', 'COD']
 
@@ -66,5 +65,4 @@ function generateTrip() {
     jsRoute.innerHTML = `${route}`
 }
 
-    jsButton.onclick = generateTrip
-});
+jsButton.onclick = generateTrip
